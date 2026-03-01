@@ -11,6 +11,11 @@ function calculate(operation) {
     } else if (operation === "multiply") {
         result = num1 * num2;
     } else if (operation === "divide") {
+        if (num2 === 0) {
+            document.getElementById("result").innerText = "Cannot divide by zero";
+            return;
+        }
+
         result = num1 / num2;
     }
 
