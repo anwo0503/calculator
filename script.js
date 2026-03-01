@@ -1,35 +1,34 @@
-function add() {
+function calculate(operation) {
     const num1 = parseFloat(document.getElementById("num1").value);
     const num2 = parseFloat(document.getElementById("num2").value);
 
-    const result = num1 + num2;
+    let result;
+
+    if (operation === "add") {
+        result = num1 + num2;
+    } else if (operation === "subtract") {
+        result = num1 - num2;
+    } else if (operation === "multiply") {
+        result = num1 * num2;
+    } else if (operation === "divide") {
+        result = num1 / num2;
+    }
 
     document.getElementById("result").innerText = "Result: " + result;
+}
+
+function add() {
+    calculate("add");
 }
 
 function subtract() {
-    const num1 = parseFloat(document.getElementById("num1").value);
-    const num2 = parseFloat(document.getElementById("num2").value);
-
-    const result = num1 - num2;
-
-    document.getElementById("result").innerText = "Result: " + result;
+    calculate("subtract");
 }
 
 function multiply() {
-    const num1 = parseFloat(document.getElementById("num1").value);
-    const num2 = parseFloat(document.getElementById("num2").value);
-
-    const result = num1 * num2;
-
-    document.getElementById("result").innerText = "Result: " + result;
+    calculate("multiply");
 }
 
 function divide() {
-    const num1 = parseFloat(document.getElementById("num1").value);
-    const num2 = parseFloat(document.getElementById("num2").value);
-
-    const result = num1 / num2;
-
-    document.getElementById("result").innerText = "Result: " + result;
+    calculate("divide");
 }
